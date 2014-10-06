@@ -13,19 +13,31 @@ and open the template in the editor.
         <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body bgcolor="skyblue" text="black">
         <center>
+            <p>
+                Ejemplo Factura <br>
+                Delgado Alvia Carlos <br>
+                Facci Uleam            
+            </p>  
         <form id="frmFactura">
-            <div id="cabeceraFactura">
-           <label id="lbl">N Factura</label>
+          <div id="cabeceraFactura">
+          <label id="lbl">N Factura</label>
           <input type="text" id="txtnumfact" value="FAC-0001"/>
-            <br>
+          <br>
             
-            <label id="lbl">Nombre</label>
-           <input type="text" id="txtnomcli" />
-            <br>
-            <label id="lbl">Cédula</label>
-           <input type="text" id="txcedula" />
+          <label id="lbl">Nombre</label>
+          <input type="text" id="txtnomcli"/>
+          <br>
+            
+          <label id="lbl">Cédula</label>
+          <input type="text" id="txcedula"/>
+          <br>
+           
+          <label id="lbl">Fecha</label>        
+          <input type="date" id="txtfecha"/>
+          <br>
+            
             </div>
             <br>
             <br>
@@ -144,27 +156,23 @@ and open the template in the editor.
                 </table>
                 
                 </center>
-             
-        
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    </body>
-</html>
-<script>
+             <input type="reset" value="Borrar Factura">
+        <script>
     window.addEventListener("load",function() 
     { 
      document.querySelector("input").addEventListener("change",function()
         {
-            calculoSuma();
+            calculo();
         },false); 
         for (var i = 1; i <=10; i++) {
             document.querySelector("#cant"+i).addEventListener("blur",function()
             {
-                 calculoSuma();
+                 calculo();
             },false);         
         }
      }
     ,false);
-    function calculoSuma()
+    function calculo()
     {   
         var descuento=0;
         var suma=0;
@@ -188,3 +196,7 @@ and open the template in the editor.
                     parseFloat( document.querySelector("#Desc").value)) ;
     }
 </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </body>
+    
+</html>
